@@ -1,0 +1,196 @@
+<!-- orders.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KONE - Orders</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/orders_style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>KONE</h1>
+            <nav>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('careers') }}">Careers</a>
+                <a href="{{ url_for('profile') }}">Profile</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="packages">
+            <h2>Select Your Package</h2>
+            <div class="packages-list">
+                <div class="package-item" onclick="openModal('Basic Package', '₹157780')">
+                    <h3>Basic Package</h3>
+                    <p>₹157780</p>
+                    <ul>
+                        <li>Basic Installation</li>
+                        <li>Standard Maintenance</li>
+                    </ul>
+                </div>
+                <div class="package-item" onclick="openModal('Standard Package', '₹167780')">
+                    <h3>Standard Package</h3>
+                    <p>₹167780</p>
+                    <ul>
+                        <li>Advanced Installation</li>
+                        <li>Extended Maintenance</li>
+                        <li>Priority Support</li>
+                    </ul>
+                </div>
+                <div class="package-item" onclick="openModal('Golden Package', '₹183090')">
+                    <h3>Golden Package</h3>
+                    <p>₹183090</p>
+                    <ul>
+                        <li>Advanced Installation</li>
+                        <li>Extended Maintenance</li>
+                    </ul>
+                </div>
+                <div class="package-item" onclick="openModal('Premium Package', '₹251670')">
+                    <h3>Premium Package</h3>
+                    <p>₹251670</p>
+                    <ul>
+                        <li>Full Installation</li>
+                        <li>Comprehensive Maintenance</li>
+                        <li>24/7 Emergency Service</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
+<!-- New Sections for Detailed Packages -->
+<section class="package-detail">
+    <div class="package-wrapper">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/26.jpg') }}" alt="Basic Package Image">
+        </div>
+        <div class="content-container">
+            <h3>Basic Package</h3>
+            <p>The Basic Package is designed to meet the essential needs of smaller installations. It includes basic installation services and standard maintenance, ensuring a reliable and cost-effective solution for homes or small businesses. The package covers the core functionalities with a focus on simplicity and affordability.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Initial setup and installation of core equipment.</li>
+                <li>Regular maintenance checks to ensure smooth operation.</li>
+                <li>Customer support during business hours.</li>
+                <li>Option to upgrade to advanced services if needed.</li>
+            </ul>
+            <p>This package is ideal for those looking for a straightforward and reliable solution without additional bells and whistles.</p>
+        </div>
+    </div>
+</section>
+
+<section class="package-detail">
+    <div class="package-wrapper reverse">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/6.jpg') }}" alt="Standard Package Image">
+        </div>
+        <div class="content-container">
+            <h3>Standard Package</h3>
+            <p>The Standard Package offers a step up from the basic option with advanced installation techniques and extended maintenance. This package is suited for medium-sized installations where a higher level of service and support is desired. It includes priority support and enhanced features for greater reliability and performance.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Comprehensive installation including advanced configurations.</li>
+                <li>Extended maintenance with additional service checks.</li>
+                <li>Priority customer support for quicker resolution of issues.</li>
+                <li>Customized solutions based on specific needs.</li>
+            </ul>
+            <p>This package is ideal for businesses that require more robust support and want to ensure that their systems are always operating at peak efficiency.</p>
+        </div>
+    </div>
+</section>
+
+<section class="package-detail">
+    <div class="package-wrapper">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/27.jpg') }}" alt="Golden Package Image">
+        </div>
+        <div class="content-container">
+            <h3>Golden Package</h3>
+            <p>The Golden Package provides a comprehensive solution with advanced installation and extended maintenance. It is designed for larger installations that require a high level of service and performance. This package ensures that all aspects of the system are covered with a focus on long-term reliability and customer satisfaction.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Advanced installation with customization options.</li>
+                <li>Extended maintenance including more frequent service visits.</li>
+                <li>Dedicated support team for ongoing assistance.</li>
+                <li>Optional add-ons for enhanced functionality.</li>
+            </ul>
+            <p>Choose this package if you need a balance between cost and extensive coverage, with a focus on long-term value and support.</p>
+        </div>
+    </div>
+</section>
+
+<section class="package-detail">
+    <div class="package-wrapper reverse">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Premium Package Image">
+        </div>
+        <div class="content-container">
+            <h3>Premium Package</h3>
+            <p>The Premium Package is our top-tier offering, providing the most comprehensive set of services and features. It includes full installation, comprehensive maintenance, and 24/7 emergency service. This package is designed for large enterprises where continuous operation is critical, and immediate support is essential.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Full installation with all-inclusive setup and configuration.</li>
+                <li>Comprehensive maintenance with unlimited service visits.</li>
+                <li>24/7 emergency support to address urgent issues anytime.</li>
+                <li>Customizable features and add-ons based on business needs.</li>
+            </ul>
+            <p>This package offers peace of mind with its all-encompassing support, making it the ideal choice for businesses with demanding requirements and a need for uninterrupted service.</p>
+        </div>
+    </div>
+</section>
+
+        <!-- Modal -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Confirm Your Order</h2>
+                <p id="packageName"></p>
+                <p id="packagePrice"></p>
+                <button onclick="confirmOrder()">Confirm Order</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-left">
+                <img src="{{ url_for('static', filename='images/20.png') }}" alt="KONE Logo">
+            </div>
+            <div class="footer-center">
+                <p class="footer-tagline">To Create the Best People Flow Experience</p>
+            </div>
+            <div class="footer-right">
+                <img src="{{ url_for('static', filename='images/21.png') }}" alt="Connect">
+                <p>Connect @kone</p>
+                <p>Email: info@kone.com</p>
+                <p>Phone: 1800 108 1234</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KONE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(packageName, packagePrice) {
+            document.getElementById('packageName').innerText = packageName;
+            document.getElementById('packagePrice').innerText = packagePrice;
+            document.getElementById('confirmationModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('confirmationModal').style.display = 'none';
+        }
+
+        function confirmOrder() {
+            alert('Your order has been confirmed!');
+            closeModal();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!-- index.html - home page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KONE - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index_style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>KONE</h1>
+            <nav>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('careers') }}">Careers</a>
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('signup') }}">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Innovative Elevator Solutions</h2>
+                <p>"Enhancing the flow of urban life with seamless mobility solutions."</p>
+            </div>
+            <img src="{{ url_for('static', filename='images/7.jpg') }}" alt="Elevator Solutions" class="hero-image">
+        </section>
+        <section class="features">
+            <div class="feature-item">
+                
+                
+                <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Feature 1" class="feature-image">
+                <h3>Innovative Design</h3>
+                <p>State-of-the-art technology for enhanced user experience.</p>
+            </div>
+            <div class="feature-item">
+                <img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Feature 2" class="feature-image">
+                <h3>Reliable Performance</h3>
+                <p>Robust systems ensuring safety and efficiency.</p>
+            </div>
+            <div class="feature-item">
+                <img src="{{ url_for('static', filename='images/13.jpg') }}" alt="Feature 3" class="feature-image">
+                <h3>Eco-Friendly Solutions</h3>
+                <p>Commitment to sustainability with energy-efficient solutions.</p>
+            </div>
+        </section>
+
+        <section id="latest-news" class="news">
+            <div class="container">
+                <h2>Latest News and Stories</h2>
+                <div class="news-item">
+                    <img src="{{ url_for('static', filename='images/6.jpg') }}" alt="news 1" class="news-image">
+                    <h3>New Smart Elevators Transform Urban Landscapes</h3>
+                    <p>KONE has recently unveiled its new line of smart elevators, designed to enhance the efficiency of vertical transportation in modern cities. These state-of-the-art elevators come with advanced features such as predictive maintenance, real-time performance monitoring, and seamless integration with building management systems. The introduction of these smart elevators aims to address the growing demand for smarter and more efficient urban mobility solutions.</p>
+                </div>
+                <div class="news-item">
+                    <img src="{{ url_for('static', filename='images/14.jpg') }}" alt="news 2" class="news-image">
+                    <h3>KONE Launches Eco-Friendly Elevator Models</h3>
+                    <p>In a significant step towards sustainability, KONE has launched its new range of eco-friendly elevator models. These elevators feature energy-efficient technologies and environmentally friendly materials, reducing their carbon footprint and contributing to greener buildings. The new models also incorporate regenerative drives that capture and reuse energy, further enhancing their environmental benefits.</p>
+                </div>
+                <div class="news-item">
+                    <img src="{{ url_for('static', filename='images/15.jpg') }}" alt="news 3" class="news-image">
+                    <h3>KONE Wins Prestigious Design Award</h3>
+                    <p>KONE is proud to announce that it has won the prestigious Design Excellence Award for its innovative elevator design. This award recognizes the company's commitment to blending aesthetics with functionality, creating elevators that not only perform exceptionally well but also enhance the visual appeal of modern architecture. The award-winning design features sleek lines, customizable finishes, and user-friendly interfaces that set a new standard in elevator design.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="reviews">
+            <div class="container">
+                <h2>Customer Reviews</h2>
+                <div class="slideshow-container">
+                    <div class="slideshow">
+                        <div class="slide">
+                            <div class="review-content">
+                                <img src="{{ url_for('static', filename='images/12.jpg') }}" alt="Customer 1" class="review-image">
+                                <div class="text">
+                                    <p>"Excellent service and innovative solutions!" - Gwen</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="review-content">
+                                <img src="{{ url_for('static', filename='images/9.jpg') }}" alt="Customer 2" class="review-image">
+                                <div class="text">
+                                    <p>"Highly recommend KONE for all your elevator needs." - Vedhanya</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="review-content">
+                                <img src="{{ url_for('static', filename='images/11.jpg') }}" alt="Customer 3" class="review-image">
+                                <div class="text">
+                                    <p>"Great quality and exceptional support." - Andrew</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="review-content">
+                                <img src="{{ url_for('static', filename='images/10.jpg') }}" alt="Customer 4" class="review-image">
+                                <div class="text">
+                                    <p>"KONE's customer service is outstanding!" - Ben</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="prev">&#10094;</a>
+                    <a class="next">&#10095;</a>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            // Function to show slides based on slideIndex
+            function showSlides(n) {
+                const slides = document.querySelectorAll(".slide");
+                if (slides.length === 0) return; // Exit if there are no slides
+                if (n > slides.length) { slideIndex = 1; }
+                if (n < 1) { slideIndex = slides.length; }
+                
+                slides.forEach((slide) => {
+                    slide.style.display = "none"; // Hide all slides
+                });
+            
+                slides[slideIndex - 1].style.display = "flex"; // Shows the current slide
+            }
+            
+            // Function to handle slide navigation
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+            
+            // event listeners to buttons
+            document.querySelector(".prev").addEventListener("click", () => plusSlides(-1));
+            document.querySelector(".next").addEventListener("click", () => plusSlides(1));
+            </script>
+            
+            
+            
+        
+        
+        
+
+        
+    </main>
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-left">
+                <img src="{{ url_for('static', filename='images/20.png') }}" alt="KONE Logo">
+            </div>
+            <div class="footer-center">
+                <p class="footer-tagline">To Create the Best People Flow Experience</p>
+            </div>
+            <div class="footer-right">
+                <img src="{{ url_for('static', filename='images/21.png') }}" alt="Connect">
+                <p>Connect @kone</p>
+                <p>Email: info@kone.com</p>
+                <p>Phone: 1800 108 1234</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KONE. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>

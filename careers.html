@@ -1,0 +1,167 @@
+<!-- careers.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KONE - Careers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/career_style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>KONE</h1>
+            <nav>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('careers') }}">Careers</a>
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('signup') }}">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Careers at KONE</h1>
+                <p>Join us in shaping the future of vertical transportation. At KONE, we value innovation, diversity, and sustainability. Explore our career opportunities and be a part of a global leader dedicated to creating a better flow of people in cities worldwide.</p>
+            </div>
+            <img src="{{ url_for('static', filename='images/22.jpg') }}" alt="Careers Image" class="hero-image">
+        </section>
+
+        <!-- Life at KONE -->
+        <section class="life-at-kone">
+            <h2>Life at KONE</h2>
+            <div class="life-at-kone-content">
+                <img src="{{ url_for('static', filename='images/23.jpg') }}" alt="Life at KONE" class="life-at-kone-image">
+                <div class="life-at-kone-details">
+                    <p>As the world’s cities grow more complex, moving easily and safely becomes even more important. At KONE, we work together to make cities better places to live. Creating urban flow requires talent and ambition. Put yourself in the driver’s seat. Your career is a journey, and how you travel makes a difference.</p>
+                    <div class="employee-benefits">
+                        <h3>Employee Benefits</h3>
+                        <div class="benefits-columns">
+                            <div class="benefits-column">
+                                <ul>
+                                    <li>Competitive Salary</li>
+                                    <li>Health and Wellness Programs</li>
+                                    <li>Flexible Work Hours</li>
+                                    <li>Performance Bonuses</li>
+                                </ul>
+                            </div>
+                            <div class="benefits-column">
+                                <ul>
+                                    <li>Career Development Opportunities</li>
+                                    <li>Employee Discounts</li>
+                                    <li>Annual Bonus</li>
+                                    <li>Retirement Savings Plan</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    
+       
+ 
+<!-- Join Us Now -->
+<section class="join-us-now">
+    <h2>Join Us Now</h2>
+    <div class="join-us-content">
+        <div class="join-us-image">
+            <img src="{{ url_for('static', filename='images/24.jpg') }}" alt="Join Us" class="join-us-img">
+        </div>
+        <div class="join-us-form">
+            <div class="form-column">
+                <h3>Personal Details</h3>
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first_name" required>
+
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last_name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+
+                    <label for="nationality">Nationality:</label>
+                    <input type="text" id="nationality" name="nationality" required>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </form>
+            </div>
+
+            <div class="form-column">
+                <h3>Qualifications</h3>
+                
+                <label for="qualification">Qualification:</label>
+                <input type="text" id="qualification" name="qualification" required>
+
+                <label for="specialization">Specialization:</label>
+                <input type="text" id="specialization" name="specialization" required>
+
+                <h3>Work Experience:</h3>
+                <label for="company1">Company:</label>
+                <input type="text" id="company1" name="company1">
+
+                <label for="role1">Role:</label>
+                <input type="text" id="role1" name="role1">
+
+                <label for="years1">Years:</label>
+                <input type="number" id="years1" name="years1">
+
+                <label for="CTC">CTC in terms of LPA:</label>
+                <input type="CTC" id="CTC" name="CTC">
+
+                <!-- Horizontal Rule for Separation -->
+                <hr class="separator">
+
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+
+                <input type="submit" value="submit">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    </main>
+
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-left">
+                <img src="{{ url_for('static', filename='images/20.png') }}" alt="KONE Logo">
+            </div>
+            <div class="footer-center">
+                <p class="footer-tagline">To Create the Best People Flow Experience</p>
+            </div>
+            <div class="footer-right">
+                <img src="{{ url_for('static', filename='images/21.png') }}" alt="Connect">
+                <p>Connect @kone</p>
+                <p>Email: info@kone.com</p>
+                <p>Phone: 1800 108 1234</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KONE. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

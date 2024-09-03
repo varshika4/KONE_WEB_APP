@@ -1,0 +1,71 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KONE - Login</title>
+    <script>
+        function showLoginError() {
+            var error = '{{ error_message|safe }}';
+            if (error) {
+                alert(error);
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_style.css') }}">
+</head>
+<body onload="showLoginError()">
+    <header>
+        <div class="container">
+            <h1>KONE</h1>
+            <nav>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('careers') }}">Careers</a>
+                <a href="{{ url_for('signup') }}">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-container">
+            <div class="login-left">
+                <div class="login-wrapper">
+                    <h2>Login to Your Account</h2>
+                    <form method="POST" action="{{ url_for('login') }}">
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" required><br>
+                        <label for="password">Password:</label><br>
+                        <input type="password" id="password" name="password" required><br><br>
+                        <input type="submit" value="Login">
+                    </form>
+                </div>
+            </div>
+            <div class="login-right">
+                <img src="{{ url_for('static', filename='images/20.png') }}" alt="Login Image">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-left">
+                <img src="{{ url_for('static', filename='images/20.png') }}" alt="KONE Logo">
+            </div>
+            <div class="footer-center">
+                <p class="footer-tagline">To Create the Best People Flow Experience</p>
+            </div>
+            <div class="footer-right">
+                <img src="{{ url_for('static', filename='images/21.png') }}" alt="Connect">
+                <p>Connect @kone</p>
+                <p>Email: info@kone.com</p>
+                <p>Phone: 1800 108 1234</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KONE. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

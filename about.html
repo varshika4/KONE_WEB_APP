@@ -1,0 +1,201 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KONE - About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about_style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>KONE</h1>
+            <nav>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('careers') }}">Careers</a>
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('signup') }}">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+   <!-- Main Content -->
+   <main>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>About KONE</h1>
+                <p>KONE is a global leader in the elevator and escalator industry, dedicated to providing innovative solutions that enhance the efficiency and convenience of vertical transportation. With a strong focus on technology and sustainability, KONE is committed to creating the best possible user experience and contributing to the development of smarter cities.</p>
+            </div>
+            <img src="{{ url_for('static', filename='images/6.jpg') }}" alt="About Image" class="hero-image">
+        </section>
+    </main>
+    
+
+    <!-- Services Section -->
+<section class="services">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>Elevator Installation</h3>
+                <img src="{{ url_for('static', filename='images/16.jpg') }}" alt="Elevator Installation">
+                <p>We provide professional installation services for a wide range of elevator systems, ensuring safety, efficiency, and reliability.</p>
+            </div>
+            <div class="service-item">
+                <h3>Regular Maintenance</h3>
+                <img src="{{ url_for('static', filename='images/17.jpg') }}" alt="Regular Maintenance">
+                <p>Our maintenance services ensure that your elevators operate smoothly and safely, with regular inspections and repairs.</p>
+            </div>
+            <div class="service-item">
+                <h3>24/7 Emergency Service</h3>
+                <img src="{{ url_for('static', filename='images/18.jpg') }}" alt="Emergency Service">
+                <p>We offer around-the-clock emergency support to address any urgent issues with your elevator systems.</p>
+            </div>
+           
+    </div>
+</section>
+
+
+    <!-- Vision and Mission Section -->
+<section class="vision-mission">
+    <div class="container">
+        <div class="vision-mission-content">
+            <div class="vision-mission-text">
+                <h2 style="font-size:4vw">Vision and Mission</h2>
+                <div style="font-size:1.9vw; font-family: 'Times New Roman', Times, serif;">
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">&#10003; Our vision is to lead the industry in developing solutions that create a more sustainable and connected world.</li>
+                        <li>&#10003; Our mission is to deliver the best people flow experience by providing innovative and efficient elevator and escalator solutions.</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="vision-mission-image">
+                <img src="{{ url_for('static', filename='images/19.jpg') }}" alt="Vision and Mission">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="values">
+    <div class="container">
+        <div class="values-content">
+            <div class="values-image">
+                <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Values Image">
+            </div>
+            <div class="values-text">
+                <h2 style="font-size:4vw">Values</h2>
+                <ul style="font-size:1.9vw">
+                    <li>Innovation</li>
+                    <li>Customer Focus</li>
+                    <li>Integrity</li>
+                    <li>Sustainability</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="pricing">
+    <div class="pricing-wrapper">
+        <h2>Pricing Tables</h2>
+        <div class="pricing-table">
+            <div class="pricing-item">
+                <h3>Basic Package</h3>
+                <p>₹157780</p>
+                <ul>
+                    <li>Basic Installation</li>
+                    <li>Standard Maintenance</li>
+                </ul>
+            </div>
+            <div class="pricing-item">
+                <h3>Standard Package</h3>
+                <p>₹167780</p>
+                <ul>
+                    <li>Advanced Installation</li>
+                    <li>Extended Maintenance</li>
+                    <li>Priority Support</li>
+                </ul>
+            </div>
+            <div class="pricing-item">
+                <h3>Golden Package</h3>
+                <p>₹183090</p>
+                <ul>
+                    <li>Advanced Installation</li>
+                    <li>Extended Maintenance</li>
+                </ul>
+            </div>
+            <div class="pricing-item">
+                <h3>Premium Package</h3>
+                <p>₹251670</p>
+                <ul>
+                    <li>Full Installation</li>
+                    <li>Comprehensive Maintenance</li>
+                    <li>24/7 Emergency Service</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+</section>
+
+<section class="contact">
+    <div class="contact-wrapper">
+        <div class="contact-content">
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form action="#" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+            <div class="contact-image">
+                <img src="{{ url_for('static', filename='images/20.png') }}" alt="Contact Us">
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+        
+        
+
+        
+    </main>
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-left">
+                <img src="{{ url_for('static', filename='images/20.png') }}" alt="KONE Logo">
+            </div>
+            <div class="footer-center">
+                <p class="footer-tagline">To Create the Best People Flow Experience</p>
+            </div>
+            <div class="footer-right">
+                <img src="{{ url_for('static', filename='images/21.png') }}" alt="Connect">
+                <p>Connect @kone</p>
+                <p>Email: info@kone.com</p>
+                <p>Phone: 1800 108 1234</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KONE. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+    
+</body>
+</html>
